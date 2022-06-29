@@ -8,6 +8,9 @@
 /* .button-55{
     transform: translateX(100px);
 } */
+.hidden{
+    display: none;
+}
 .btn{
     align-self: center;
   background-color: #fff;
@@ -79,22 +82,33 @@
 </style>
 </head>
 
-<body style="background-color: #ffb6ba; padding: 0 10rem;">
-
-<div style="margin-left: 30%;padding: 20px;box-shadow: rgba(42, 42, 43, 0.2) 0px 7px 29px 0px;width:30rem;background-color: #bbd1ff;" class="btn">
-    <h1>Em có yêu anh không?</h1>
-    <div class="ans" style="display: flex;justify-content: space-evenly;">
-        <a id="hate" class="button1" onclick="hate()" style="transition: 1s;">
-            <button class="button-55" role="button">Không đâu</button>
-        </a>
-        <a id="start" class="button1" onclick="typeWriter()">
-            <button class="button-55" role="button">Có ạ</button>
-        </a>
+<body style="background-color: #ffb6ba;">
+<div id="kichban" style="width: 100%;display: flex;justify-content: center;">
+    <div id="ques" style="margin-top:10rem;padding: 20px;box-shadow: rgba(42, 42, 43, 0.2) 0px 7px 29px 0px;width:30rem;background-color: #bbd1ff;" class="btn">
+        <h1 id="titleKichBan"></h1>
+        <div class="ans" style="display: flex;justify-content: space-evenly;">
+            <a id="ansKichBan" class="button1" onclick="next()" style="transition: 1s;">
+                
+            </a>
+        </div>
     </div>
-
 </div>
-<h1 id="main">
-
+<div id="mainQues" style="transform: translateY(-100rem);width: 100%;display: flex;justify-content: center;">
+    <div id="ques" style="margin-top:10rem;padding: 20px;box-shadow: rgba(42, 42, 43, 0.2) 0px 7px 29px 0px;width:30rem;background-color: #bbd1ff;" class="btn">
+        <h1>Em có yêu anh không?</h1>
+        <div class="ans" style="display: flex;justify-content: space-evenly;">
+            <a id="hate" class="button1" onclick="hate()" style="transition: 1s;">
+                <button class="button-55" role="button">Không đâu</button>
+            </a>
+            <a id="start" class="button1" onclick="typeWriter()">
+                <button class="button-55" role="button">Có ạ</button>
+            </a>
+        </div>
+    </div>
+</div>
+<br/>
+<div class="a" style="margin:0 10rem;">
+<h1 id="main" class="btn" class="hidden">
 </h1>
 
 <pre id="tiresult" style="width: fit-content;display:none;font-size: 9px; background-color: #000000; font-weight: bold; padding: 4px 5px; --fs: 9px;"><b style="color:#806D4E">0</b><b style="color:#7C6A49">0</b><b style="color:#6E583C">0</b><b style="color:#A68058">0</b><b style="color:#B38D61">0</b><b style="color:#B0895D">0</b><b style="color:#B08A5D">0</b><b style="color:#B29263">0</b><b style="color:#AE895F">0</b><b style="color:#B08C62">1</b><b style="color:#AE8A5D">0</b><b style="color:#AE8A5C">1</b><b style="color:#B18F61">1</b><b style="color:#AF8B5C">1</b><b style="color:#AF9168">0</b><b style="color:#B7A082">1</b><b style="color:#B59B7A">1</b><b style="color:#B8ADA4">1</b><b style="color:#BBADA2">0</b><b style="color:#B9ADA2">1</b><b style="color:#B7ADA1">1</b><b style="color:#B2A48C">1</b><b style="color:#A99875">0</b><b style="color:#A38C6B">1</b><b style="color:#9E8E71">1</b><b style="color:#8E7C56">1</b><b style="color:#A48258">0</b><b style="color:#B38C60">0</b><b style="color:#B28F68">1</b><b style="color:#B7A597">0</b><b style="color:#BAAA9C">1</b><b style="color:#B8ACA4">0</b><b style="color:#B9B1B1">0</b><b style="color:#B9B1B0">1</b><b style="color:#BBB3B4">0</b><b style="color:#AD9C93">1</b><b style="color:#886C4D">0</b><b style="color:#A39689">1</b><b style="color:#BAAEA6">1</b><b style="color:#917357">1</b><b style="color:#99815D">1</b><b style="color:#B2A89F">0</b><b style="color:#BAB2AD">1</b><b style="color:#BAB1AA">1</b><b style="color:#BBB1AD">0</b><b style="color:#BAB2AE">10</b><b style="color:#BAB2B0">10</b><b style="color:#BAB2B1">1</b><b style="color:#BBB2AD">0</b><b style="color:#B1A08C">0</b><b style="color:#B3A69F">0</b><b style="color:#BBB4B4">0</b><b style="color:#BAB2B2">0</b><b style="color:#BAB3B3">10</b><b style="color:#BAB2B2">01</b><b style="color:#B9B2B2">1</b><b style="color:#B8B2B1">0</b><b style="color:#B8B1B0">11</b><b style="color:#BDB5B1">1</b><b style="color:#9B8971">0</b><b style="color:#3A322B">0</b><b style="color:#211F1E">1</b><b style="color:#181818">0</b><b style="color:#0F0D10">0</b><b style="color:#0A090B">1</b><b style="color:#070709">1</b><b style="color:#060608">0</b><b style="color:#050509">0</b><b style="color:#060509">01</b><b style="color:#040408">0</b><b style="color:#040308">0</b><b style="color:#060509">1</b><b style="color:#050509">011</b><b style="color:#050409">0</b><b style="color:#09080B">1</b><b style="color:#100F10">1</b><b style="color:#131212">0</b><b style="color:#0D0C0C">1</b><b style="color:#100D0F">0</b><b style="color:#120E11">1</b><b style="color:#100E10">1</b><b style="color:#121111">1</b><b style="color:#110F11">1</b><b style="color:#0B090C">0</b><b style="color:#0B0A0D">0</b><b style="color:#09090B">1</b><b style="color:#070609">0</b><b style="color:#060609">10</b><b style="color:#060509">0</b><b style="color:#030307">0</b><b style="color:#020206">00</b><b style="color:#030206">1</b><b style="color:#030306">0</b><b style="color:#060508">1</b><b style="color:#09080C">0</b><b style="color:#08070A">0</b><b style="color:#070709">1</b><b style="color:#06060A">1</b><b style="color:#0C0F10">0</b><b style="color:#232725">0</b><b style="color:#4C4F46">0</b><b style="color:#676E56">0</b><b style="color:#6D7454">0</b><b style="color:#787B57">0</b><b style="color:#707654">1</b><b style="color:#667B6F">1</b><b style="color:#758677">1</b><b style="color:#54674A">1</b><b style="color:#5F7561">0</b><b style="color:#949F95">0</b><b style="color:#94978F">1</b><b style="color:#6F6E5D">1</b><b style="color:#818676">1</b><b style="color:#999782">1</b><b style="color:#8C8761">0</b>
@@ -148,16 +162,64 @@
         <button style="display: inline-block;" class="button-56" role="button">Điều anh thích</button>
     </a>
 </div>
-
+</div>
     <script>
+    var kichban = [
+        ['Em à, anh có điều muốn nói','Anh nói đi'],
+        ['Anh muốn hỏi em là:..','Đừng ngại, anh cứ nói đi :>']
+    ]
     var i = 0;
+    var l=0,k=0;
     var vanBan = 'Anh cũng yêu em :>';
     var tocDo = 50;
+    function typeKichban() {
+
+        // document.getElementById("start").style.display="none"
+        if (l < kichban[0][0].length) {
+            document.getElementById("titleKichBan").innerHTML += kichban[0][0].charAt(l);
+            l++;
+            setTimeout(typeKichban, tocDo );
+        }else{
+            setTimeout(()=>{
+                document.getElementById("ansKichBan").innerHTML = `<button class="button-55" role="button">${kichban[0][1]}</button>`
+            }, tocDo );
+        }
+    }
+    typeKichban()
+    document.getElementById("ansKichBan").onmousedown=()=>{i=0;k+=1;l=0;document.getElementById("titleKichBan").innerHTML="";next()}
+    function next() {
+
+        // document.getElementById("start").style.display="none"
+        if (l < kichban[0][0].length) {
+            document.getElementById("titleKichBan").innerHTML += kichban[1][0].charAt(l);
+            l++;
+            setTimeout(next, tocDo );
+        }else{
+            setTimeout(()=>{
+                document.getElementById("ansKichBan").innerHTML = `<button class="button-55" role="button">${kichban[1][1]}</button>`
+            }, tocDo );
+        }
+        if(k==2){
+            document.getElementById("kichban").style.transition="2s"
+            document.getElementById("kichban").style.transform="translateY(-100rem)"
+            k+=1;
+        }if(k==3){
+            setTimeout(()=>{
+                document.getElementById("mainQues").style.transform="translateY(-20rem)"
+            }, 1000 );
+        }
+    }
+
     function hate() {
         alert("Đừng ngoan cố thế, chọn nút kia đi")
     }
+
     function typeWriter() {
         document.getElementById("hate").style.display="none"
+        document.getElementById("ques").style.display="none"
+        document.getElementById("mainQues").style.display="none"
+        document.getElementById("main").classList.remove("hidden")
+        document.getElementById("ques").style.marginTop="0"
         // document.getElementById("start").style.display="none"
         if (i < vanBan.length) {
             document.getElementById("main").innerHTML += vanBan.charAt(i);
