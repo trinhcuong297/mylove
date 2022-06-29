@@ -95,7 +95,7 @@
 </div>
 <div id="mainQues" style="transform: translateY(-100rem);width: 100%;display: flex;justify-content: center;">
     <div id="ques" style="margin-top:10rem;padding: 20px;box-shadow: rgba(42, 42, 43, 0.2) 0px 7px 29px 0px;width:30rem;background-color: #bbd1ff;" class="btn">
-        <h1>Em có yêu anh không?</h1>
+        <h1 id="loiToTinh"></h1>
         <div class="ans" style="display: flex;justify-content: space-evenly;">
             <a id="hate" class="button1" onclick="hate()" style="transition: 1s;">
                 <button class="button-55" role="button">Không đâu</button>
@@ -168,9 +168,11 @@
         ['Em à, anh có điều muốn nói','Anh nói đi'],
         ['Anh muốn hỏi em là:..','Đừng ngại, anh cứ nói đi :>']
     ]
+    var loiToTinh = 'Em có yêu anh không?'
+    var xacnhan = 'Anh cũng yêu em :>';
+    var khiChonKhong = 'Đừng ngoan cố thế chọn nút kia đi!'
     var i = 0;
     var l=0,k=0;
-    var vanBan = 'Anh cũng yêu em :>';
     var tocDo = 50;
     function typeKichban() {
 
@@ -207,11 +209,24 @@
             setTimeout(()=>{
                 document.getElementById("mainQues").style.transform="translateY(-20rem)"
             }, 1000 );
+            setTimeout(()=>{
+                typer()
+            }, 1000 );
+            
         }
     }
 
     function hate() {
-        alert("Đừng ngoan cố thế, chọn nút kia đi")
+        alert(khiChonKhong)
+    }
+    var n=0;
+    function typer() {
+        // document.getElementById("start").style.display="none"
+        if (n < loiToTinh.length) {
+            document.getElementById("loiToTinh").innerHTML += loiToTinh.charAt(n);
+            n++;
+            setTimeout(typer, tocDo );
+        }
     }
 
     function typeWriter() {
@@ -221,8 +236,8 @@
         document.getElementById("main").classList.remove("hidden")
         document.getElementById("ques").style.marginTop="0"
         // document.getElementById("start").style.display="none"
-        if (i < vanBan.length) {
-            document.getElementById("main").innerHTML += vanBan.charAt(i);
+        if (i < xacnhan.length) {
+            document.getElementById("main").innerHTML += xacnhan.charAt(i);
             i++;
             setTimeout(typeWriter, tocDo );
         }else {
